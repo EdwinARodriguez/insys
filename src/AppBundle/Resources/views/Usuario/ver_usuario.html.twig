@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} ver usuario {% endblock %}
+
+{% block body %}
+<table>
+    <thead>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Habilitado</td>
+    </thead>
+    <tbody>
+    {% for usuario in usuarios %}
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.apellido }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.password }}</td>
+        <td>{{ usuario.habilitado }}</td>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block stylesheets %}{% endblock %}
