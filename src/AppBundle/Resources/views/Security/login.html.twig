@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="https://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/#">INSYS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/#">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/#">User</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/#">Request</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+{% endblock %}
+{% block body %}
+    <div class="container">
+
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+
+        <div class="card">
+            <h5 class="card-header">Login</h5>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-6">
+                        <form action="{{ path('login') }}" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" id="username" name="_username" value="{{ last_username }}" placeholder="Enter username">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="password" name="_password" placeholder="Password">
+                            </div>
+                            <div>
+                                <a href="###">Forget password</a>
+                            </div>
+
+                            <div class="float-right">
+                                <button type="" class="btn btn-primary">Register</button>
+                                <button type="submit" class="btn btn-success">Login</button>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Place sticky footer content here.</span>
+        </div>
+    </footer>
+{% endblock %}

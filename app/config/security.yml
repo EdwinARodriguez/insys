@@ -3,7 +3,7 @@
 security:
 
     encoders:
-      AppBundle\Entity\Usuario.php:
+      AppBundle\Entity\Usuario:
         algorithm: bcrypt
         cost: 12
 
@@ -23,9 +23,17 @@ security:
             security: false
 
         main:
-            pattern: ^/
-            http_basic: ~
-            provider: db
+            #pattern: ^/
+            #http_basic: ~
+            #provider: db
+
+            anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login
+            logout:
+                path: /logout
+                target: /login
             #anonymous: ~
             # activate different ways to authenticate
 

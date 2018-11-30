@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+
+        <div class="card">
+            <h5 class="card-header">Register</h5>
+            <div class="card-body">
+                <form action="" method="post">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-8">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" name="_name" placeholder="Enter name">
+                            </div>
+                            <div class="form-group">
+                                <label for="surname">Surname</label>
+                                <input type="text" class="form-control" id="surname" name="_surname" placeholder="Enter surname">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="_email" placeholder="Enter email">
+                            </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="_password" placeholder="Enter password">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="repeatPassword">Repeat password</label>
+                            <input type="password" class="form-control" id="repeatPassword" name="_repeatPassword" placeholder="Repeat password">
+                        </div>
+                        <div class="float-right">
+                            <button type="" class="btn btn-primary">Go login</button>
+                            <button type="submit" class="btn btn-success">Register</button>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+

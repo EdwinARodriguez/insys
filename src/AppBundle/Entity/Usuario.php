@@ -218,7 +218,7 @@ class Usuario implements UserInterface, \Serializable
             $this->id,
             $this->nombre,
             $this->email
-            ) = $this->unserialize($serialized);
+            ) = unserialize($serialized, ['allowed_classes' => false]);
     }
 
     /**
