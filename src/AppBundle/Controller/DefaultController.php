@@ -6,6 +6,7 @@ use AppBundle\Entity\Usuario;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class DefaultController extends Controller
 {
@@ -13,18 +14,19 @@ class DefaultController extends Controller
      * @Route("/", name="homepage")
      */
 
-    public function indexAction(Request $request)
+    public function indexAction(Request $request, UserPasswordEncoderInterface $userPasswordEncoder)
     {
-//        $usuario = new Usuario();
-//        $usuario->setNombre("Juan");
-//        $usuario->setApellido("De los Palotes");
-//        $usuario->setEmail("juan@gmail.com");
-//        $usuario->setPassword("123456");
-//        $usuario->setHabilitado(true);
-//
-//        $em = $this->getDoctrine()->getManager();
-//        $em->persist($usuario);
-//        $em->flush();
+        //$usuario = new Usuario();
+        //$usuario->setNombre("Eddy");
+        //$usuario->setApellido("Rdguez");
+        //$usuario->setEmail("eddy@gmail.com");
+        //$usuario->setPassword($userPasswordEncoder->encodePassword($usuario,"123456"));
+
+        //$usuario->setHabilitado(true);
+
+        //$em = $this->getDoctrine()->getManager();
+        //$em->persist($usuario);
+        //$em->flush();
 
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
